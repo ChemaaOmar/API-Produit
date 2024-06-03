@@ -9,6 +9,7 @@ API Products est une application API REST développée avec FastAPI et SQLAlchem
 - [Endpoints de l'API](#endpoints-de-lapi)
 - [Tests](#tests)
 - [Collection Postman](#collection-postman)
+- [Docker](#utilisation-de-docker)
 
 ## Installation
 
@@ -210,4 +211,13 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
   ]
 }
 ```
+
+## Utilisation de Docker
+
+### Construire l'image Docker
+
+Assurez-vous d'être à la racine du projet où se trouve le `Dockerfile` et exécutez la commande suivante :
+
+```sh
+docker build -t api-products .
 
