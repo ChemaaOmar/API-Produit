@@ -6,7 +6,7 @@ from app.main import app
 from app.database import Base, get_db
 import os
 
-DATABASE_URL = "postgresql://admin:admin@localhost:5432/testdatabase"
+DATABASE_URL = "postgresql://admin:admin@localhost:5432/produits"
 
 engine = create_engine(DATABASE_URL)
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
