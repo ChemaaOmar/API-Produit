@@ -1,7 +1,12 @@
+import sys
+import os
 from logging.config import fileConfig
 from sqlalchemy import create_engine
 from sqlalchemy import pool
 from alembic import context
+
+# Ajouter le chemin du répertoire parent au sys.path
+sys.path.insert(0, os.path.realpath(os.path.join(os.path.dirname(__file__), '..')))
 
 # Ce modèle est votre module qui contient vos modèles SQLAlchemy
 from app.models import Base
