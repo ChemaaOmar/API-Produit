@@ -16,7 +16,7 @@ jobs:
         env:
           POSTGRES_USER: admin
           POSTGRES_PASSWORD: admin
-          POSTGRES_DB: produits
+          POSTGRES_DB: admin
         ports:
           - 5432:5432
         options: >-
@@ -42,10 +42,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Check available commands
+      run: |
+        which python
+        which pip
+        which alembic
+
     - name: Run database migrations
       run: |
-        python -m alembic upgrade head
+        alembic upgrade head
 
     - name: Run tests
       run: |
-        unittest
+        pytest
