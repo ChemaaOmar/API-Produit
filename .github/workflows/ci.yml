@@ -16,7 +16,7 @@ jobs:
         env:
           POSTGRES_USER: admin
           POSTGRES_PASSWORD: admin
-          POSTGRES_DB: admin
+          POSTGRES_DB: produits
         ports:
           - 5432:5432
         options: >-
