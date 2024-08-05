@@ -11,16 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres:
+      db:
         image: postgres:13
         env:
-          POSTGRES_USER: admin
-          POSTGRES_PASSWORD: admin
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: root
           POSTGRES_DB: produits
         ports:
           - 5434:5432
         options: >-
-          --health-cmd "pg_isready -U admin -d produits"
+          --health-cmd "pg_isready -U postgres -d produits"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
