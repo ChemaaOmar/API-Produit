@@ -2,56 +2,37 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:13
-        env:
-          POSTGRES_USER: admin
-          POSTGRES_PASSWORD: admin
-          POSTGRES_DB: produits
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd "pg_isready -U admin -d produits"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-    env:
-      DATABASE_URL: postgresql://admin:admin@localhost:5432/produits
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.10'
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+    - name: Build Docker images
+      run: docker-compose build
 
-    - name: Check available commands
-      run: |
-        which python
-        which pip
-        which alembic
+    - name: Start services
+      run: docker-compose up
 
-    - name: Run database migrations
+    - name: Wait for services to be ready
       run: |
-        alembic upgrade head
+        sleep 10
+        docker ps
 
     - name: Run tests
       run: |
-        python -m unittest discover
+        docker-compose exec web python -m unittest discover
+
+    - name: Stop services
+      run: docker-compose down
