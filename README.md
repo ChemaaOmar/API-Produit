@@ -47,7 +47,7 @@ API Products est une application API REST développée avec FastAPI et SQLAlchem
     uvicorn app.main:app --reload
     ```
 
-L'application sera disponible à l'adresse [http://127.0.0.1:8000](http://127.0.0.1:8000).
+L'application sera disponible à l'adresse [http://127.0.0.1:8001](http://127.0.0.1:8001).
 
 ## Utilisation
 
@@ -124,7 +124,7 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
           "raw": "{\n    \"name\": \"Test Product\",\n    \"description\": \"Test Description\",\n    \"price\": 10.0,\n    \"stock\": 100\n}"
         },
         "url": {
-          "raw": "http://127.0.0.1:8000/products/",
+          "raw": "http://127.0.0.1:8001/products/",
           "protocol": "http",
           "host": [
             "127",
@@ -132,7 +132,7 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
             "0",
             "1"
           ],
-          "port": "8000",
+          "port": "8001",
           "path": [
             "products"
           ]
@@ -146,7 +146,7 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8000/products/{PRODUCT_ID}",
+          "raw": "http://127.0.0.1:8001/products/{PRODUCT_ID}",
           "protocol": "http",
           "host": [
             "127",
@@ -154,7 +154,7 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
             "0",
             "1"
           ],
-          "port": "8000",
+          "port": "8001",
           "path": [
             "products",
             "1"
@@ -169,7 +169,7 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8000/products/",
+          "raw": "http://127.0.0.1:8001/products/",
           "protocol": "http",
           "host": [
             "127",
@@ -177,7 +177,7 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
             "0",
             "1"
           ],
-          "port": "8000",
+          "port": "8001",
           "path": [
             "products"
           ]
@@ -191,7 +191,7 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8000/products/{PRODUCT_ID_TO_DELETE}",
+          "raw": "http://127.0.0.1:8001/products/{PRODUCT_ID_TO_DELETE}",
           "protocol": "http",
           "host": [
             "127",
@@ -199,7 +199,7 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
             "0",
             "1"
           ],
-          "port": "8000",
+          "port": "8001",
           "path": [
             "products",
             "1"
