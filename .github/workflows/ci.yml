@@ -28,11 +28,11 @@ jobs:
       run: docker-compose build
 
     - name: Start services
-      run: docker-compose up
+      run: docker-compose up -d
 
     - name: Wait for services to be ready
       run: |
-        sleep 10
+        sleep 15
         docker ps
 
     - name: Run tests
