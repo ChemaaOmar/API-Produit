@@ -216,8 +216,14 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
 
 ### Construire l'image Docker
 
-Assurez-vous d'être à la racine du projet où se trouve le `Dockerfile` et exécutez la commande suivante :
+Assurez-vous d'être à la racine du projet où se trouve le `Dockerfile` et exécutez les commandes suivantes :
 
-```sh
-docker build -t api-products .
+# Build app
+docker-compose build
+
+# Run app
+docker-compose up
+
+# Stop app
+docker-compose down
 
