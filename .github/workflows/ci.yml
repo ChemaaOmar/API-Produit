@@ -48,10 +48,18 @@ jobs:
         which pip
         which alembic
 
-    - name: Run database migrations
+    - name: Build app
       run: |
-        alembic upgrade head
-
+        docker-compose build
+  
+    - name: Run app
+      run: |
+        docker-compose up
+    
     - name: Run tests
       run: |
         python -m unittest discover
+
+    - name: Stop app
+      run: |
+        docker-compose down
