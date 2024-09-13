@@ -218,6 +218,9 @@ Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez l
 
 Assurez-vous d'être à la racine du projet où se trouve le `Dockerfile` et exécutez les commandes suivantes :
 
+# Creation of the shared network
+docker network create shared-network
+
 # Build app
 docker-compose build
 

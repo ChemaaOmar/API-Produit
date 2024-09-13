@@ -7,8 +7,13 @@ services:
       - "8001:8001"
     depends_on:
       - db
+      - rabbitmq
     environment:
       - DATABASE_URL=postgresql://postgres:root@db/produits
+      - RABBITMQ_URL=amqp://guest:guest@rabbitmq/
+    networks:
+      - shared-network
+
   db:
     image: postgres:13
     environment:
@@ -16,4 +21,18 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: produits
     ports:
-      - "5434:5432"
+      - "5435:5432"
+    networks:
+      - shared-network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5673:5672"
+      - "15673:15673"
+    networks:
+      - shared-network
+
+networks:
+  shared-network:
+    external: true
