@@ -68,7 +68,7 @@ class ProductAPITestCase(unittest.TestCase):
         self.assertIn("id", data)
 
     def test_read_product(self):
-        # Créer un produit pour le test
+        # Création d'un produit
         response = self.client.post(
             "/products/",
             json={"name": "Test Product 2", "description": "Test Description 2", "price": 20.0, "stock": 200},
@@ -92,7 +92,7 @@ class ProductAPITestCase(unittest.TestCase):
         self.assertGreater(len(data), 0)
 
     def test_delete_product(self):
-        # Créer un produit pour le test
+        # Supprimer un produit
         response = self.client.post(
             "/products/",
             json={"name": "Test Product 3", "description": "Test Description 3", "price": 30.0, "stock": 300},

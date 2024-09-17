@@ -95,9 +95,9 @@ python -m unittest discover tests
 
 ## Collection Postman
 
-Vous pouvez utiliser la collection Postman fournie pour tester l'API. Importez le fichier `API_Products.postman_collection.json` dans Postman.
+Vous pouvez utiliser la collection Postman fournie pour tester l'API.
 
-### Example de fichier JSON pour la Collection Postman
+### Fichier JSON pour la Collection Postman
 
 ```json 
 {
