@@ -1,0 +1,110 @@
+{
+    "info": {
+      "name": "API Products",
+      "_postman_id": "d1c1aab3-45d5-4a89-bf6e-95c35be4c4bb",
+      "description": "Collection for testing API Products",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Create Product",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"name\": \"Test Product\",\n    \"description\": \"Test Description\",\n    \"price\": 10.0,\n    \"stock\": 100\n}"
+          },
+          "url": {
+            "raw": "http://127.0.0.1:8001/products/",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8001",
+            "path": [
+              "products"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Product",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8001/products/{PRODUCT_ID}",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8001",
+            "path": [
+              "products",
+              "1"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Products",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8001/products/",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8001",
+            "path": [
+              "products"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Delete Product",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://127.0.0.1:8001/products/{PRODUCT_ID_TO_DELETE}",
+            "protocol": "http",
+            "host": [
+              "127",
+              "0",
+              "0",
+              "1"
+            ],
+            "port": "8001",
+            "path": [
+              "products",
+              "1"
+            ]
+          }
+        },
+        "response": []
+      }
+    ]
+}
